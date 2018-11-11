@@ -1,0 +1,6 @@
+framework module Pods_GuidebookApp {
+  umbrella header "Pods-GuidebookApp-umbrella.h"
+
+  export *
+  module * { export * }
+}
