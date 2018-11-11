@@ -9,6 +9,9 @@
 import UIKit
 
 class MapViewController: UIViewController {
+    
+    // Properties
+    var place:Place?
 
     override func viewDidLoad() {
         super.viewDidLoad()

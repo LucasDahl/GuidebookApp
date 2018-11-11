@@ -9,6 +9,9 @@
 import UIKit
 
 class NoteViewController: UIViewController {
+    
+    // Properties
+    var place:Place?
 
     override func viewDidLoad() {
         super.viewDidLoad()

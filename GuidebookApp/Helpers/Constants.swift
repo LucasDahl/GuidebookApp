@@ -20,7 +20,7 @@ struct Constants {
         static let placeCellId = "PlaceCell"
         
         // Table View constants
-        static let notesViewController = "NotesViewController"
+        static let notesViewController = "NoteViewController"
         static let composeViewController = "ComposeViewController"
         static let mapViewController = "MapViewController"
         
