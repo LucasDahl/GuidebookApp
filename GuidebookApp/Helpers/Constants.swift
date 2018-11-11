@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import RealmSwift
 
 struct Constants {
     
@@ -17,6 +18,12 @@ struct Constants {
         static let notesViewController = "NotesViewController"
         static let composeViewController = "ComposeViewController"
         static let mapViewController = "MapViewController"
+        
+    }
+    
+    struct RealmConfig {
+        
+        static let placeConfig = Realm.Configuration(fileURL: Bundle.main.url(forResource: "Place", withExtension: "realm"), inMemoryIdentifier: nil, syncConfiguration: nil, encryptionKey: nil, readOnly: true, schemaVersion: 0, migrationBlock: nil, deleteRealmIfMigrationNeeded: false, shouldCompactOnLaunch: nil, objectTypes: nil)
         
     }
     

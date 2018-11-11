@@ -7,13 +7,18 @@
 //
 
 import UIKit
+import RealmSwift
 
 class PlacesViewController: UIViewController {
+    
+    // Properties
+    var places:Results<Place>?
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        places = PlaceService.getPlaces()
+        
     }
     
 
