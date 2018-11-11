@@ -243,8 +243,16 @@
                                 <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                                 <items>
                                     <navigationItem title="Title" id="8BI-oA-AlS">
-                                        <barButtonItem key="leftBarButtonItem" systemItem="done" id="ngt-Qd-cFu"/>
-                                        <barButtonItem key="rightBarButtonItem" systemItem="compose" id="zAI-1k-fVH"/>
+                                        <barButtonItem key="leftBarButtonItem" systemItem="done" id="ngt-Qd-cFu">
+                                            <connections>
+                                                <action selector="doneTapped:" destination="aIH-ra-LVe" id="fRH-yC-hOo"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="compose" id="zAI-1k-fVH">
+                                            <connections>
+                                                <action selector="composeTapped:" destination="aIH-ra-LVe" id="84b-z5-Fze"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -252,13 +260,40 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="aFP-3y-2SF">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="NoteCell" id="aFP-3y-2SF" customClass="NoteCell" customModule="GuidebookApp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="aFP-3y-2SF" id="frx-xI-ERG">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="99.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NbU-62-Mgh">
+                                                    <rect key="frame" x="30" y="20" width="315" height="21"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h1j-pY-CHg">
+                                                    <rect key="frame" x="30" y="61" width="315" height="8.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="NbU-62-Mgh" firstAttribute="leading" secondItem="frx-xI-ERG" secondAttribute="leading" constant="30" id="68Z-fp-MyE"/>
+                                                <constraint firstAttribute="trailing" secondItem="NbU-62-Mgh" secondAttribute="trailing" constant="30" id="ULV-cz-C6f"/>
+                                                <constraint firstItem="h1j-pY-CHg" firstAttribute="top" secondItem="NbU-62-Mgh" secondAttribute="bottom" constant="20" id="YVg-ib-Gar"/>
+                                                <constraint firstAttribute="bottom" secondItem="h1j-pY-CHg" secondAttribute="bottom" constant="30" id="cLY-9c-V7M"/>
+                                                <constraint firstItem="h1j-pY-CHg" firstAttribute="leading" secondItem="frx-xI-ERG" secondAttribute="leading" constant="30" id="dTL-2g-Br0"/>
+                                                <constraint firstAttribute="trailing" secondItem="h1j-pY-CHg" secondAttribute="trailing" constant="30" id="hhv-xS-ASN"/>
+                                                <constraint firstItem="NbU-62-Mgh" firstAttribute="top" secondItem="frx-xI-ERG" secondAttribute="top" constant="20" id="oWT-1k-bda"/>
+                                            </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="dateLabel" destination="NbU-62-Mgh" id="iqO-up-VJe"/>
+                                            <outlet property="noteLabel" destination="h1j-pY-CHg" id="aYG-Mv-b78"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -278,6 +313,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="TlP-y8-xfv"/>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="QCp-fD-PvN" id="OPW-zs-1Ly"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vgb-JQ-3Li" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -300,7 +338,6 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="200" id="Mwk-XQ-uCV"/>
                                         </constraints>
-                                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
@@ -311,11 +348,17 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="98" height="34"/>
                                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" title="Cancel"/>
+                                                <connections>
+                                                    <action selector="cancelTapped:" destination="601-4m-AJi" eventType="touchUpInside" id="vSg-6F-RTn"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XPc-cG-IMe">
                                                 <rect key="frame" x="217" y="0.0" width="98" height="34"/>
                                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <state key="normal" title="Done"/>
+                                                <state key="normal" title="Save"/>
+                                                <connections>
+                                                    <action selector="saveTapped:" destination="601-4m-AJi" eventType="touchUpInside" id="Yky-LI-Bnv"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -340,6 +383,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="A8s-4U-Mqv"/>
                     </view>
+                    <connections>
+                        <outlet property="textView" destination="OHn-sX-gvt" id="7C0-re-dRx"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xdR-dt-JhM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
