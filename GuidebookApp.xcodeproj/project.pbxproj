@@ -8,11 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		9544E7A02198B12A008FCCB7 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9544E79F2198B12A008FCCB7 /* Constants.swift */; };
-		9544E7A32198D72F008FCCB7 /* Place.realm in Resources */ = {isa = PBXBuildFile; fileRef = 9544E7A22198D72F008FCCB7 /* Place.realm */; };
 		9544E7A52198D78B008FCCB7 /* PlaceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9544E7A42198D78B008FCCB7 /* PlaceService.swift */; };
 		9544E7A72198DC19008FCCB7 /* PlaceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9544E7A62198DC19008FCCB7 /* PlaceCell.swift */; };
 		9544E7A92198E631008FCCB7 /* NoteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9544E7A82198E631008FCCB7 /* NoteCell.swift */; };
 		9544E7AB2198E911008FCCB7 /* NotesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9544E7AA2198E911008FCCB7 /* NotesService.swift */; };
+		9544E7AD2198F4C5008FCCB7 /* Place.realm in Resources */ = {isa = PBXBuildFile; fileRef = 9544E7AC2198F4C5008FCCB7 /* Place.realm */; };
 		95FE97262198A5B8001B38EF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95FE97252198A5B8001B38EF /* AppDelegate.swift */; };
 		95FE972B2198A5B8001B38EF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95FE97292198A5B8001B38EF /* Main.storyboard */; };
 		95FE972D2198A5B9001B38EF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95FE972C2198A5B9001B38EF /* Assets.xcassets */; };
@@ -32,11 +32,11 @@
 		3E4CFBCC744CC22E54429E3F /* Pods-GuidebookApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GuidebookApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-GuidebookApp/Pods-GuidebookApp.release.xcconfig"; sourceTree = "<group>"; };
 		8AEC11852F1492F089FA5F14 /* Pods-GuidebookApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GuidebookApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GuidebookApp/Pods-GuidebookApp.debug.xcconfig"; sourceTree = "<group>"; };
 		9544E79F2198B12A008FCCB7 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		9544E7A22198D72F008FCCB7 /* Place.realm */ = {isa = PBXFileReference; lastKnownFileType = file; path = Place.realm; sourceTree = "<group>"; };
 		9544E7A42198D78B008FCCB7 /* PlaceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceService.swift; sourceTree = "<group>"; };
 		9544E7A62198DC19008FCCB7 /* PlaceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceCell.swift; sourceTree = "<group>"; };
 		9544E7A82198E631008FCCB7 /* NoteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteCell.swift; sourceTree = "<group>"; };
 		9544E7AA2198E911008FCCB7 /* NotesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesService.swift; sourceTree = "<group>"; };
+		9544E7AC2198F4C5008FCCB7 /* Place.realm */ = {isa = PBXFileReference; lastKnownFileType = file; path = Place.realm; sourceTree = "<group>"; };
 		95FE97222198A5B8001B38EF /* GuidebookApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GuidebookApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		95FE97252198A5B8001B38EF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		95FE972A2198A5B8001B38EF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -69,7 +69,7 @@
 		9544E7A12198D6E9008FCCB7 /* Realms */ = {
 			isa = PBXGroup;
 			children = (
-				9544E7A22198D72F008FCCB7 /* Place.realm */,
+				9544E7AC2198F4C5008FCCB7 /* Place.realm */,
 			);
 			path = Realms;
 			sourceTree = "<group>";
@@ -246,7 +246,7 @@
 				95FE97302198A5B9001B38EF /* LaunchScreen.storyboard in Resources */,
 				95FE972D2198A5B9001B38EF /* Assets.xcassets in Resources */,
 				95FE972B2198A5B8001B38EF /* Main.storyboard in Resources */,
-				9544E7A32198D72F008FCCB7 /* Place.realm in Resources */,
+				9544E7AD2198F4C5008FCCB7 /* Place.realm in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -200,16 +200,25 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fvn-XI-Bfy">
                                         <rect key="frame" x="0.0" y="0.0" width="47" height="30"/>
                                         <state key="normal" title="Locate"/>
+                                        <connections>
+                                            <action selector="locateTapped:" destination="5HL-Nv-MbT" eventType="touchUpInside" id="qD6-aj-4w7"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3KK-4q-EDp">
                                         <rect key="frame" x="0.0" y="50" width="47" height="30"/>
                                         <state key="normal" title="Route"/>
+                                        <connections>
+                                            <action selector="routeTapped:" destination="5HL-Nv-MbT" eventType="touchUpInside" id="Y8l-x1-7gT"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KhU-V0-HBI">
                                 <rect key="frame" x="20" y="40" width="34" height="30"/>
                                 <state key="normal" title="Back"/>
+                                <connections>
+                                    <action selector="backTapped:" destination="5HL-Nv-MbT" eventType="touchUpInside" id="fw5-rJ-ZFV"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -226,6 +235,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="DWj-bT-qUA"/>
                     </view>
+                    <connections>
+                        <outlet property="mapView" destination="0zc-Fv-3g3" id="KHm-aA-iOQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Iit-HQ-CDV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
