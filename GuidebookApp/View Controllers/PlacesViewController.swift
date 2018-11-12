@@ -13,6 +13,7 @@ class PlacesViewController: UIViewController {
     
     // Properties
     var places:Results<Place>?
+    var faves:Results<Place>?
     
     // Outlets
     @IBOutlet weak var tableView: UITableView!
@@ -22,6 +23,9 @@ class PlacesViewController: UIViewController {
 
         // Grab places from the bundle realm file
         places = PlaceService.getPlaces()
+        
+        // Grab the faves from the default realm file
+        faves = FaveService.getFavePlaces()
         
         // Configure the table view
         tableView.delegate = self
@@ -51,18 +55,58 @@ class PlacesViewController: UIViewController {
 
 extension PlacesViewController: UITableViewDelegate, UITableViewDataSource {
     
+    func numberOfSections(in tableView: UITableView) -> Int {
+        
+        if faves!.count > 0 {
+            
+            // There are some faves saved, so do 2 sections
+            return 2
+            
+        } else {
+            
+            // Otherwise just do one section for all places
+            return 1
+            
+        }
+        
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return places != nil ? places!.count : 0
+        
+        if tableView.numberOfSections > 1 && section == 0 {
+            
+            // There are 2 sections, and it's asking about the 1st section
+            return faves != nil ? faves!.count : 0
+            
+        }else {
+            
+            // There is oly 1 section
+            return places != nil ? places!.count : 0
+            
+        }
+        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: Constants.Storyboard.placeCellId, for: indexPath) as! PlaceCell
     
         // Get the place
-        let p = places![indexPath.row]
+        let p:Place?
+            
+        if tableView.numberOfSections > 1 && indexPath.section == 0 {
+            
+            // There are 2 sections, and it's asking about the 1st section
+            p = faves![indexPath.row]
+            
+        }else {
+            
+            // There's only 1 sectiom
+            p =  places![indexPath.row]
+            
+        }
         
         // Set the cell
-        cell.showPlace(p)
+        cell.showPlace(p!)
         
         return cell
     }
@@ -74,5 +118,56 @@ extension PlacesViewController: UITableViewDelegate, UITableViewDataSource {
         
     }
     
+    // This is for sliding the cell
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        
+        // Get the place
+        var p:Place?
+        
+        if tableView.numberOfSections > 1 && indexPath.section == 0 {
+            
+            p = faves![indexPath.row]
+            
+        }else {
+            
+            p = places![indexPath.row]
+            
+        }
+        
+        // Decide what the action title should be
+        var actionTitle = ""
+        
+        if tableView.numberOfSections > 1 && indexPath.section == 0 {
+            
+            // The user is sliding over a place in the fave section
+            actionTitle = "Unfave"
+            
+        }else if faves!.index(of: p!) != nil {
+            
+            // This place is in the faves list
+            actionTitle = "Unfave"
+            
+        } else {
+            
+            actionTitle = "Fave"
+            
+        }
+        
+        let rowAction = UITableViewRowAction(style: .default, title: actionTitle) { (action, indexPath) in
+            
+            // toggle the fave
+            FaveService.toggleFave(p!.placeId!)
+            
+            // Get the new list of faves
+            self.faves = FaveService.getFavePlaces()
+            
+            // Reload the tableview
+            self.tableView.reloadData()
+            
+        }
+        
+        return [rowAction]
+        
+    }
     
 }

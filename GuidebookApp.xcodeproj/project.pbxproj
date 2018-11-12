@@ -12,6 +12,7 @@
 		9544E7A72198DC19008FCCB7 /* PlaceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9544E7A62198DC19008FCCB7 /* PlaceCell.swift */; };
 		9544E7A92198E631008FCCB7 /* NoteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9544E7A82198E631008FCCB7 /* NoteCell.swift */; };
 		9544E7AB2198E911008FCCB7 /* NotesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9544E7AA2198E911008FCCB7 /* NotesService.swift */; };
+		95649D6A21991353003CD638 /* FaveService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95649D6921991353003CD638 /* FaveService.swift */; };
 		95FA3462219906080097DBE2 /* Place.realm in Resources */ = {isa = PBXBuildFile; fileRef = 95FA3461219906080097DBE2 /* Place.realm */; };
 		95FE97262198A5B8001B38EF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95FE97252198A5B8001B38EF /* AppDelegate.swift */; };
 		95FE972B2198A5B8001B38EF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95FE97292198A5B8001B38EF /* Main.storyboard */; };
@@ -36,6 +37,7 @@
 		9544E7A62198DC19008FCCB7 /* PlaceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceCell.swift; sourceTree = "<group>"; };
 		9544E7A82198E631008FCCB7 /* NoteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteCell.swift; sourceTree = "<group>"; };
 		9544E7AA2198E911008FCCB7 /* NotesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesService.swift; sourceTree = "<group>"; };
+		95649D6921991353003CD638 /* FaveService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaveService.swift; sourceTree = "<group>"; };
 		95FA3461219906080097DBE2 /* Place.realm */ = {isa = PBXFileReference; lastKnownFileType = file; path = Place.realm; sourceTree = "<group>"; };
 		95FE97222198A5B8001B38EF /* GuidebookApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GuidebookApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		95FE97252198A5B8001B38EF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -145,6 +147,7 @@
 			children = (
 				9544E7A42198D78B008FCCB7 /* PlaceService.swift */,
 				9544E7AA2198E911008FCCB7 /* NotesService.swift */,
+				95649D6921991353003CD638 /* FaveService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -311,6 +314,7 @@
 				95FE97482198A6FE001B38EF /* Place.swift in Sources */,
 				95FE97262198A5B8001B38EF /* AppDelegate.swift in Sources */,
 				95FE974A2198A70A001B38EF /* Fave.swift in Sources */,
+				95649D6A21991353003CD638 /* FaveService.swift in Sources */,
 				9544E7A72198DC19008FCCB7 /* PlaceCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
