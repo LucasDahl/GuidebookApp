@@ -54,7 +54,7 @@ class DetailViewController: UIViewController {
         
         let notesVC = storyboard?.instantiateViewController(withIdentifier: Constants.Storyboard.notesViewController) as? NoteViewController
         
-        if let notesVC = notesVC{
+        if let notesVC = notesVC {
             
             // Set the place property
             notesVC.place = place
