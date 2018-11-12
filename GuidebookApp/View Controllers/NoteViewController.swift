@@ -17,6 +17,7 @@ class NoteViewController: UIViewController {
     
     // Outlets
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var navBar: UINavigationBar!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +25,10 @@ class NoteViewController: UIViewController {
         // Get notes for the place
         if place != nil {
             
+            // Set the title
+            navBar.topItem?.title = place!.name
+            
+            // Gettting the notes
             // Can safetly unwrap because all places have a place ID
             notes = NoteService.getNotes(place!.placeId!, updates: {
                 

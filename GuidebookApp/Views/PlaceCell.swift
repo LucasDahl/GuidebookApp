@@ -15,6 +15,7 @@ class PlaceCell: UITableViewCell {
 
     // Outlets
     @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var placeImageView: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -34,6 +35,9 @@ class PlaceCell: UITableViewCell {
         
         // Set the label for the name of the place
         nameLabel.text = p.name
+        
+        // Set the image for the place
+        placeImageView.image = UIImage(named: p.filename!)
         
     }
     
