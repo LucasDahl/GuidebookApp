@@ -41,5 +41,11 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>NSAppleEventsUsageDescription</key>
+	<string></string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Allow the Guidebook app to use your location always?</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Allow the guidebook app to use your location?</string>
 </dict>
 </plist>
