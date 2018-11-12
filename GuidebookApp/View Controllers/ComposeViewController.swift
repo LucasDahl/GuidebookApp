@@ -37,7 +37,7 @@ class ComposeViewController: UIViewController {
         }
         
         // Create the note that needs to be saved
-        var note = Note()
+        let note = Note()
         note.text = textView.text
         
         // Create a date formatter object
